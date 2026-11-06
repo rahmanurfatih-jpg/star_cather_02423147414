@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Star Catcher</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="game-wrap" id="gameWrap">
+    <header class="hud">
+      <div class="hud-item">Skor <strong id="score">0</strong></div>
+      <div class="hud-item">Waktu <strong id="time">60</strong></div>
+      <div class="hud-item">Nyawa <strong id="lives">♥♥♥</strong></div>
+    </header>
+
+    <div class="stage">
+      <canvas id="game" width="480" height="640" tabindex="0"
+              aria-label="Area permainan Star Catcher"></canvas>
+
+      <!-- Layar Mulai / Selesai -->
+      <div class="overlay" id="overlay">
+        <h1 id="overlayTitle">Star Catcher</h1>
+        <p id="overlayText">Tangkap bintang selama 60 detik sambil menghindari meteor.</p>
+        <p class="hint">Kontrol: ← → atau A / D, atau tombol di layar.</p>
+        <p class="best" id="best"></p>
+        <button id="startBtn" type="button">Mulai</button>
+      </div>
+    </div>
+
+    <!-- Kontrol sentuh untuk HP -->
+    <div class="touch-controls">
+      <button id="btnLeft" type="button" aria-label="Geser kiri">◀</button>
+      <button id="btnRight" type="button" aria-label="Geser kanan">▶</button>
+    </div>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>

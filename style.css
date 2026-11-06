@@ -1,0 +1,111 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0b1026;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-wrap {
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  gap: 6px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 4px 8px;
+  background: #151c3d;
+  border-radius: 8px;
+}
+.hud strong { color: #ffd84d; margin-left: 4px; }
+#lives { color: #ff5c6c; letter-spacing: 2px; }
+
+.stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 480 / 640;
+  background: #0b1026;
+  border: 2px solid #2b3670;
+  border-radius: 10px;
+  outline: none;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 480 / 640;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(8, 12, 32, 0.88);
+  border-radius: 10px;
+}
+.overlay.hidden { display: none; }
+.overlay h1 { margin: 0 0 8px; font-size: 32px; color: #ffd84d; }
+.overlay p { margin: 4px 0; line-height: 1.4; }
+.hint { font-size: 14px; color: #aab4e8; }
+.best { font-size: 14px; color: #7be0a0; min-height: 18px; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  color: #0b1026;
+  background: #ffd84d;
+  font-weight: 700;
+}
+button:active { transform: scale(0.96); }
+#startBtn { margin-top: 14px; padding: 12px 36px; font-size: 18px; }
+
+.touch-controls {
+  display: flex;
+  gap: 8px;
+}
+.touch-controls button {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 22px;
+  background: #2b3670;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.touch-controls button.active { background: #4a5bc4; }
+
+@media (min-width: 900px) and (hover: hover) {
+  .touch-controls { opacity: 0.85; }
+}
